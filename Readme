@@ -8,6 +8,8 @@ Run m1_main.m to play the demo. Here are some notes for exceptions:
    as the out of memory problem. 
 3, It requires quite a lot of memory even with only 3 parallel workers, so
    it is suggested to run on a server rather than a personal computer. 
+4, The number of redundant eigenvectors is set arbitrarily, and should be 
+   larger in case of error. 
 
 Any Problem, please contact:
 wangjing0@seu.edu.cn
