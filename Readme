@@ -2,13 +2,13 @@ Scripts for the paper: Parcellating whole brain for individuals by simple
 linear iterative clustering. 
 
 Generating whole brain atlas with resting-state fMRI data using normalized 
-cuts (Ncut) and simple linear iterative clustering (SLIC). The 
-parcellaiton is only performed in the individual subject level. In order 
-to generate parcellations with multiple granularities, we vary the cluster
-number in a wide range. The two parcellation algorithms are compared under
-four evaluation metrics, i.e., the difference between the initialized 
-cluster number and the average actual cluster number, spatial 
-discontiguity index, functional homogeneity and reproducibility. 
+cuts (Ncut) and simple linear iterative clustering (SLIC). The parcellaiton
+is only performed in the individual subject level. In order to generate 
+parcellations with multiple granularities, we vary the cluster number in a 
+wide range. The two parcellation algorithms are compared under four 
+evaluation metrics, i.e., the difference between the initialized cluster 
+number and the average actual cluster number, spatial discontiguity index, 
+functional homogeneity and reproducibility. 
 
 Run m1_main.m to play the demo. Here are some notes for exceptions:
 1, You might download the NIFTI toolbox and Craddock's demo data manually.
