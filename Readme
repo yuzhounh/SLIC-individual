@@ -1,5 +1,5 @@
-Scripts for the paper: Parcellating whole brain for individuals by simple 
-linear iterative clustering. 
+Parcellating whole brain for individuals by simple linear iterative clustering
+Copyright (C) 2016 Jing Wang
 
 Generating whole brain atlas with resting-state fMRI data using normalized 
 cuts (Ncut) and simple linear iterative clustering (SLIC). The parcellaiton
@@ -10,7 +10,10 @@ evaluation metrics, i.e., the difference between the initialized cluster
 number and the average actual cluster number, spatial discontiguity index, 
 functional homogeneity and reproducibility. 
 
-Run m1_main.m to play the demo. Here are some notes for exceptions:
+Usage:
+Run m1_main.m to play the demo. 
+
+Notes:
 1. You might download the NIFTI toolbox and Craddock's demo data manually.
 2. For parallel computing, carefully choose the number of parallel workers
    to make the most of the hardware resources and to avoid problems such 
@@ -21,7 +24,8 @@ Run m1_main.m to play the demo. Here are some notes for exceptions:
 4. The number of redundant eigenvectors is set arbitrarily, and should be 
    set larger in case of error. 
 
-Any Problem, please contact:
+Contact information:
+Jing Wang
 wangjing0@seu.edu.cn
 yuzhounh@163.com
 
