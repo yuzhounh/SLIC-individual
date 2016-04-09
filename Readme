@@ -24,8 +24,8 @@ Notes:
 4. The number of redundant eigenvectors is set arbitrarily, and should be 
    set larger in case of error. 
 5. The clustering performance on different databases, such as Craddock's 
-   data in this demo and Beijing_Zang data (http://www.nitrc.org/projects/
-   fcon_1000/), are different. 
+   data in this demo and Beijing_Zang data 
+   (http://www.nitrc.org/projects/fcon_1000/), are different. 
 
 Contact information:
 Jing Wang
