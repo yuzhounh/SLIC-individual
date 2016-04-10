@@ -27,7 +27,7 @@ cK=sK(iK);
 load(sprintf('%s_sub_parc/sub%05d_K%d.mat',method,cSub,cK));
 img_parc_new=parc_distinct(img_parc);
 K_new=length(unique(img_parc_new))-1;
-spi=(K_new-K);
+spi=K_new-K;
 
 if exist('para')
     save(sprintf('%s_sub_parc/sub%05d_K%d.mat',method,cSub,cK),'img_parc','para','K','time','spi');
