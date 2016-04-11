@@ -67,5 +67,6 @@ for i=1:n
     cavb(i,tmp)=1;
     perct(toc,i,n,20);
 end
+cavb=cavb-diag(diag(cavb));
 
 save('parc_cavb.mat','cav','cavb');
