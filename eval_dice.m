@@ -18,8 +18,6 @@ function dice=eval_dice(method,sub1,sub2,iK)
 %     You should have received a copy of the GNU General Public License
 %     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-tic;
-
 load parc_graymatter.mat;
 nM=num_gray;
 
