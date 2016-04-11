@@ -30,8 +30,6 @@ filename='NIfTI_20140122.zip';
 if ~exist(filename,'file')
     urlwrite(url,filename);
 end
-unzip('NIfTI_20140122.zip','NIfTI/'); % unzip
-addpath('NIfTI/'); % add path
 
 % demo data, 30.21 MB
 % From https://www.nitrc.org/projects/cluster_roi/
