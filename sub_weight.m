@@ -46,7 +46,7 @@ for iM=1:nM
     end
     perct(toc,iM,nM,10);
 end
-W=W+W'+speye(nM); % symmetric property
+W=W+W'; % symmetric property
 [W,nEmpty]=parc_diag(W); % for empty rows, set the diagonal elements to be ones
 
 time=toc/3600;
