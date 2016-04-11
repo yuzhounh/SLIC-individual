@@ -19,6 +19,10 @@
 
 clear,clc;
 
+% add the NIfTI toolbox into the path
+unzip('NIfTI_20140122.zip','NIfTI/'); % unzip
+addpath('NIfTI/'); % add path
+
 %% deal with the demo data
 % unzip
 gunzip('pyClusterROI_testdata.1.0.tar.gz');
