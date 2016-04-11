@@ -1,4 +1,4 @@
-function [label,para,time]=SLIC(img_gray,m,cN)
+function [label,time]=SLIC(img_gray,m,cN)
 % Simple linear iterative clustering (SLIC)
 % Input:
 %     img_gray, each row is a voxel, each column is a feature
@@ -9,22 +9,6 @@ function [label,para,time]=SLIC(img_gray,m,cN)
 %     para, for choosing the tuning parameter
 %     time, the elapsed time to do clustering by SLIC
 % 2015-6-16 08:16:15
-
-%     Parcellating whole brain for individuals by simple linear iterative clustering
-%     Copyright (C) 2016 Jing Wang
-%
-%     This program is free software: you can redistribute it and/or modify
-%     it under the terms of the GNU General Public License as published by
-%     the Free Software Foundation, either version 3 of the License, or
-%     (at your option) any later version.
-%
-%     This program is distributed in the hope that it will be useful,
-%     but WITHOUT ANY WARRANTY; without even the implied warranty of
-%     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-%     GNU General Public License for more details.
-%
-%     You should have received a copy of the GNU General Public License
-%     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 tic;
 
@@ -94,7 +78,6 @@ distance=Inf*ones(a,b,c);
 rsd=1;
 iter=0;
 
-para=[];
 while rsd>1e-4
     iter=iter+1;
     center_pre=center;
@@ -127,11 +110,6 @@ while rsd>1e-4
             ds=norm(tmp(1:3)); % spatial distance
             dc=norm(tmp(4:end)); % color distance
             du=sqrt((dc/m)^2+(ds/S)^2); % unified distance
-            
-            % [dc/m, ds/S, du]
-            para=[para;dc*S/ds];
-            % DS=[DS;ds];
-            % DC=[DC;dc];
 
             if du<distance(i,j,k)
                 distance(i,j,k)=du;
