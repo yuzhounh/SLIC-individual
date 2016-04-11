@@ -22,8 +22,8 @@ function sub_eigen(iSub)
 
 tic;
 
-load parc_graymatter.mat;
 load sSub.mat;
+load parc_graymatter.mat;
 
 cSub=sSub(iSub);
 load(sprintf('sub_weight/sub%05d.mat',cSub)); % weight matrix
