@@ -23,13 +23,30 @@ tic;
 
 load sSub.mat;
 load parc_cavb.mat;
+load parc_graymatter.mat;
 
 cSub=sSub(iSub);
 load(sprintf('prep/sub%05d.mat',cSub));
 
-W=img_gray*img_gray'; % cross-correlation
-W=W.*cavb; % spatial constraint
-W=W.*(W>=0.5); % threshold 0.5
+% weight matrix
+nM=num_gray;
+W=sparse(nM,nM);
+for iM=1:nM
+    sV=cav(iM,:); % set of voxels in cav
+    sV(sV==0)=[]; % delete zeros
+    if ~isempty(sV)
+        nV=length(sV); 
+        for iV=1:nV
+            iN=sV(iV);
+            if iM<iN % symmetric property
+                tmp=img_gray(iM,:)*img_gray(iN,:)'; % Pearson's correlation
+                W(iM,iN)=tmp*(tmp>=0.5); % exclude negative and weak correlations
+            end
+        end
+    end
+    perct(toc,iM,nM,10);
+end
+W=W+W'+speye(nM); % symmetric property
 [W,nEmpty]=parc_diag(W); % for empty rows, set the diagonal elements to be ones
 
 time=toc/3600;
