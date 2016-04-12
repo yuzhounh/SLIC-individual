@@ -28,4 +28,4 @@ load(sprintf('%s_sub_parc/sub%05d_K%d.mat',method,cSub,cK));
 img_parc_new=parc_distinct(img_parc);
 K_new=length(unique(img_parc_new))-1;
 spi=K_new-K;
-save(sprintf('%s_sub_parc/sub%05d_K%d.mat',method,cSub,cK),'img_parc','K','spi');
+save(sprintf('%s_sub_parc/sub%05d_K%d.mat',method,cSub,cK),'img_parc','K','time','spi');
