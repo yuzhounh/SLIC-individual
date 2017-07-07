@@ -31,12 +31,13 @@ if ~exist(filename,'file')
     urlwrite(url,filename);
 end
 
-% demo data, 30.21 MB
-% From https://www.nitrc.org/projects/cluster_roi/
-url='ftp://www.nitrc.org/home/groups/cluster_roi/htdocs/pyClusterROI/pyClusterROI_testdata.1.0.tar.gz';
-filename='pyClusterROI_testdata.1.0.tar.gz';
+% demo data of three subjects, a graymatter mask and a brain template
+% 219 MB
+% From http://www.nitrc.org/projects/slic
+url='http://www.nitrc.org/frs/download.php/10124/SLIC_individual_data.zip';
+filename='SLIC_individual_data.zip';
 if ~exist(filename,'file')
-    fprintf('Begin downloading the data (30.21 MB). Please wait......\n');
+    fprintf('Begin downloading the demo data (219 MB). Please wait......\n');
     urlwrite(url,filename);
     fprintf('Completed.\n');
 end

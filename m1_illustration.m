@@ -20,9 +20,10 @@
 
 clear,clc;
 
-cSub=1; % choose a subject
+load sSub.mat;
+iSub=1; % choose a subject
+cSub=sSub(iSub);
 
-gunzip('T1_4mm.nii.gz');
 nii=load_untouch_nii('T1_4mm.nii');
 img_bg=nii.img;
 

@@ -19,45 +19,28 @@
 
 clear,clc;
 
-% add the NIfTI toolbox into the path
+%% add the NIfTI toolbox into the path
 unzip('NIfTI_20140122.zip','NIfTI/'); % unzip
 addpath('NIfTI/'); % add path
 
-%% deal with the demo data
-% unzip
-gunzip('pyClusterROI_testdata.1.0.tar.gz');
-untar('pyClusterROI_testdata.1.0.tar');
-gunzip('pyClusterROI/gm_maskfile.nii.gz','./');
-for i=1:3
-    gunzip(sprintf('pyClusterROI/subject%d.nii.gz',i),'./');
-end
-
-% delete
-delete('pyClusterROI_testdata.1.0.tar');
-rmdir('pyClusterROI/','s');
-
-% rename
-movefile('gm_maskfile.nii','graymatter.nii');
-mkdir('data');
-for i=1:3
-    movefile(sprintf('subject%d.nii',i),sprintf('data/sub%05d.nii',i));
-end
-
-% change the nonzero elements in the graymatter mask from 32767 to 1
-nii=load_untouch_nii('graymatter.nii');
-img=nii.img;
-img(img~=0)=1;
-nii.img=img;
-save_untouch_nii(nii,'graymatter.nii');
-
 %% the sets
-sSub=[1,2,3]; % the set of the subjects
+sSub=[0440,1018,1244]; % the set of the subjects
 nSub=length(sSub);
 save('sSub.mat','sSub','nSub');
 
 sK=[50:50:1000]; % the set of the cluster numbers
 nK=length(sK);
 save('sK.mat','sK','nK');
+
+%% demo data
+unzip('SLIC_individual_data.zip');
+gunzip('*.gz');
+delete('*.gz');
+mkdir('data');
+for iSub=1:nSub
+    cSub=sSub(iSub);
+    movefile(sprintf('sub%05d.nii',cSub),sprintf('data/sub%05d.nii',cSub));
+end
 
 %% utilities
 % create a searchlight of the 26-connected neighborhood
