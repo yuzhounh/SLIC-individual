@@ -18,7 +18,7 @@ Usage:
 Run m1_main.m to play the demo. 
 
 Notes:
-1. You might download the NIFTI toolbox and Craddock's demo data manually.
+1. You might download the NIFTI toolbox and the demo data manually.
 2. For parallel computing, carefully choose the number of parallel workers
    to make the most of the hardware resources and to avoid problems such
    as the out of memory problem.
