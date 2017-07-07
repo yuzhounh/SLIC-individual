@@ -19,15 +19,21 @@ function SLIC_sub_parc(iSub,iK)
 %     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 tic;
-load sK.mat;
 load sSub.mat;
+load sK.mat;
 load parc_graymatter.mat;
 
 cK=sK(iK);
 cSub=sSub(iSub);
 
-load(sprintf('prep/sub%05d.mat',cSub)); 
+% load the original image data
+nii=load_untouch_nii(sprintf('data/sub%05d.nii',cSub));
+img_rs=double(nii.img);
+num_trial=size(img_rs,4); 
+img_rs=reshape(img_rs,prod(siz),num_trial);  % image data
+img_gray=img_rs(ind_gray,:); % only consider data within the graymatter mask
 
+% apply SLIC on the original image data
 m=40; % the tuning parameter
 label=SLIC(img_gray,m,cK);
 tmp=zeros(siz);
