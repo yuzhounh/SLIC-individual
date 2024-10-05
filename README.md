@@ -6,7 +6,7 @@ is only performed in the individual subject level. In order to generate parcella
 wide range. The two parcellation algorithms are compared under four evaluation metrics, i.e., the difference between the initialized cluster 
 number and the average actual cluster number, spatial discontiguity index, functional homogeneity and reproducibility. 
 
-For a light version of this project which consumes less memory and could run on a personl computer, see https://github.com/yuzhounh/SLIC_individual-light.
+For a light version of this project which consumes less memory and could run on a personl computer, see https://github.com/yuzhounh/SLIC-individual-light.
 This version is kept as default since it is more concise and more extensible. 
 
 ## Usage:
